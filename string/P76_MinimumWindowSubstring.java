@@ -16,7 +16,7 @@ public class P76_MinimumWindowSubstring {
 
         while (end < s.length()) {
             if (map[s.charAt(end++)]-- > 0) { counter--; }
-            while (counter == 0) {
+            while (counter == 0) { // when all characters are found note index of first relavant character and size until is found.
                 if (end-start < wSize) {
                     head = start;
                     wSize = end-start;
@@ -29,6 +29,7 @@ public class P76_MinimumWindowSubstring {
     public static void main(String[] args) {
         String[][] probs = {
             {"ADOBECODEBANC", "ABC"},
+            {"clcode", "ce"},
             {"a", "a"},
             {"a", "aa"}
         };
