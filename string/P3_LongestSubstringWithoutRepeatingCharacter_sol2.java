@@ -20,7 +20,11 @@ public class P3_LongestSubstringWithoutRepeatingCharacter_sol2 {
         String[] probs = {
             "daaabbbc",
             "abcd",
-            "aaaab"
+            "aaaab",
+            "abcabcbb",
+            "bbbbb",
+            "pwwkew",
+            ""
         };
         for (String s: probs) {
             System.out.println(longestSubstring(s));

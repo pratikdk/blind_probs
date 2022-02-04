@@ -8,7 +8,7 @@ public class P322_CoinChange {
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
             for (int j = 0; j < coins.length; j++) {
-                if (coins[j] <= i) { // choose coins that are less than i
+                if (coins[j] <= i) { // choose coins that are <= i
                     dp[i] = Math.min(dp[i], dp[i - coins[j]]+1);
                 }
             }

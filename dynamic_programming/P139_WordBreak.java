@@ -47,7 +47,8 @@ public class P139_WordBreak {
             {{"applepenapple"}, {"apple","pen"}},
             {{"catsandog"}, {"cats","dog","sand","and","cat"}},
             {{"abcd"}, {"a", "b", "c", "bc", "ab", "abc"}},
-            {{"abcdef"}, {"abc", "def"}}
+            {{"abcd"}, {"a", "b", "c", "d", "ab"}},
+            {{"abcdef"}, {"a", "abc", "def"}}
         };
         for (String[][] prob: probs) {
             // System.out.println(wordBreak_sol1(prob[0][0], Arrays.asList(prob[1])));

@@ -18,7 +18,7 @@ public class P128_LongestConsecutiveSequence {
                 }
             }
         }
-        return Math.max(max, curr); // last index
+        return Math.max(max, curr); // also consider curr for last index
     }
 
     public static int longestConsecutive_sol2(int[] nums) {

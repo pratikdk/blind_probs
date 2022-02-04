@@ -9,8 +9,8 @@ public class P70_ClimbingStairs {
         if (n <= 0) return 0;
         if (n == 1) return 1;
         if (n == 2) return 2;
-        int oneStepBefore = 2; // ways to climb 2 stairs 
-        int twoStepsBefore = 1; // ways to climb 1 stair
+        int oneStepBefore = 2; // ways to climb 2 stairs // i-1 
+        int twoStepsBefore = 1; // ways to climb 1 stair // i-2
         int all_ways = 0;
         for (int i = 2; i < n; i++) {
             all_ways = oneStepBefore + twoStepsBefore;

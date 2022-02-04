@@ -23,7 +23,8 @@ public class P516_LongestPalindromicSubsequence {
     public static void main(String[] args) {
         String[] probs = {
             "bbbab",
-            "cbbd"
+            "cbbd",
+            "abdsaba"
         };
         for (String s: probs) {
             System.out.println(longestPalindromicSubseq(s));

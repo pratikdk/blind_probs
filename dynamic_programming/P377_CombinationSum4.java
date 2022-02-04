@@ -36,13 +36,13 @@ public class P377_CombinationSum4 {
             }
         }
         dp[target] = res;
-        return res;
+        return dp[target];
     }
 
     public static int combinationSum4_sol3(int[] nums, int target) {
         int[] dp = new int[target+1];
         dp[0] = 1;
-        for (int i = 1; i < dp.length; i++) { // i remaining to reach target
+        for (int i = 1; i <= target; i++) { // i remaining to reach target
             for (int j = 0; j < nums.length; j++) { // target is i away, try every num in nums;
                 if (nums[j] <= i) {
                     dp[i] += dp[i - nums[j]];

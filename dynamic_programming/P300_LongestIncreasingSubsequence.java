@@ -19,7 +19,7 @@ public class P300_LongestIncreasingSubsequence {
         int len = 0;
         for (int num: nums) {
             int i = 0, j = len;
-            while (i != j) { // binary search
+            while (i < j) { // binary search
                 int mid = (i + j) / 2;
                 if (dp[mid] < num) {
                     i = mid+1;

@@ -1,5 +1,5 @@
 public class P647_PalindromeSubstrings {
-    int count;
+    private int count;
 
     public int countSubstrings(String s) {
         if (s == null || s.length() == 0) return 0;

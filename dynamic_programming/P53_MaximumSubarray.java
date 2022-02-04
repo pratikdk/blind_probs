@@ -4,7 +4,7 @@ public class P53_MaximumSubarray {
         int max = nums[0];
         int currSum = max;
         for (int i = 1; i < nums.length; i++) {
-            if (currSum < 0) {
+            if (currSum <= 0) {
                 currSum = 0;
             }
             currSum += nums[i];

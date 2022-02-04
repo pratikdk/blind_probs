@@ -38,7 +38,7 @@ public class P167_TwoSum2 {
             } else if (sum > target) {
                 r--;
             } else {
-                res.add(new ArrayList<Integer>(Arrays.asList(nums[l], nums[r])));
+                res.add(new ArrayList<>(Arrays.asList(nums[l], nums[r])));
                 l++;
                 r--;
                 while (l < r && nums[l] == nums[l-1]) {l++;}

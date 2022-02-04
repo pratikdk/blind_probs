@@ -83,3 +83,6 @@ public class P91_DecodeWays {
         }
     }
 }
+
+
+// 1 1 1 0 6

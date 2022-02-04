@@ -4,7 +4,7 @@ import java.util.List;
 
 // https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
 
-
+/*** Without Repetition ***/
 public class P40_CombinationSum2 {
 
     public static List<List<Integer>> combinationSum2(int[] nums, int target) {
