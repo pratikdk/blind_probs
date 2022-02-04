@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// 1 -> n, no negatives
 public class P448_FindAllMissingNumbers {
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
