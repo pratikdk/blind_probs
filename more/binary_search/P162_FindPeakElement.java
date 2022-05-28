@@ -16,7 +16,7 @@ public class P162_FindPeakElement {
     public static void main(String[] args) {
         int[][] probs = {
             {1,2,3,1},
-            {1,2,1,3,5,6,4},
+            {1,2,1,3,5,6,4}, // return any one peak;
         };
         for (int[] prob: probs) {
             System.out.println(findPeakElement(prob));

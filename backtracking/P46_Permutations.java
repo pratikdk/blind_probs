@@ -16,7 +16,7 @@ public class P46_Permutations {
         if (tempList.size() == nums.length) {
             list.add(new ArrayList<>(tempList));
         } else {
-            for (int i = 0; i < nums.length; i++) {
+            for (int i = 0; i < nums.length; i++) { // loop bounds align with combination4
                 if (!tempList.contains(nums[i])) {
                     tempList.add(nums[i]);
                     backtrack(list, tempList, nums);

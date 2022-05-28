@@ -1,6 +1,7 @@
 public class P424_LongestRepeatingCharacterReplacement {
     
-    public static int characterReplacement(String s, int k) {
+    // this algo isn't correct, try input {aaabcd, 2}, the while loop considers aabcd as valid, 
+    public static int characterReplacement(String s, int k) { 
         int len = s.length();
         int[] count = new int[26];
         int start = 0, maxcount = 0, maxlength = 0;
@@ -14,14 +15,49 @@ public class P424_LongestRepeatingCharacterReplacement {
         }
         return maxlength;
     }
+
+
+    public static int longestStringWithChrReplacement(String s, int k) {
+        int[] map = new int[26];
+        int maxWindowSize = 0;
+
+        int l = 0, r = 0;
+        //maxf = 0
+        while (r < s.length()) {
+            map[s.charAt(r) - 'A']++;
+            r++;
+            // maxf = max(maxf, map[current_char])
+
+            while ((r-l - maxInArray(map)) > k) { // formula: windowSize - maxFreq <= k; or use maxf
+                // left shift/slide
+                map[s.charAt(l) - 'A']--;
+                l++;
+            }
+
+            maxWindowSize = Math.max(maxWindowSize, r-l);
+        }
+
+        return maxWindowSize;
+    }
+
+    public static int maxInArray(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        for (int x: arr) {
+            max = Math.max(max, x);
+        }
+        return (max == Integer.MIN_VALUE) ? -1 : max;
+    }
+
     public static void main(String[] args) {
         String[][] probs = {
             {"ABAB", "2"},
             {"ABCDA", "2"},
-            {"AABABBA", "1"}
+            {"AABABBA", "1"},
+            {"AAABCD", "2"}
         };
         for (String[] prob: probs) {
             System.out.println(characterReplacement(prob[0], Integer.parseInt(prob[1])));
+            // System.out.println(longestStringWithChrReplacement(prob[0], Integer.parseInt(prob[1])));
         }
     }
 }

@@ -16,6 +16,7 @@ public class P3_LongestSubstringWithoutRepeatingCharacter_sol2 {
         }
         return wSize;
     }
+
     public static void main(String[] args) {
         String[] probs = {
             "daaabbbc",
@@ -28,6 +29,23 @@ public class P3_LongestSubstringWithoutRepeatingCharacter_sol2 {
         };
         for (String s: probs) {
             System.out.println(longestSubstring(s));
+            // System.out.println(longestSubstring2(s));
         }
     }
+
+    // ==========================
+    // public static int longestSubstring2(String s) {
+    //     int start = 0, end = 0;
+    //     int maxSize = 0;
+    //     int[] map = new int[128];
+    //     int counter = 0;
+    //     while (end < s.length()) {
+    //         if (map[s.charAt(end++)]++ == 1) counter++;
+    //         while (counter > 0) {
+    //             if (map[s.charAt(start++)]-- > 1) counter--;
+    //         }
+    //         maxSize = Math.max(maxSize, end-start); // no +1, cause we already did end++
+    //     }
+    //     return maxSize;
+    // }
 }

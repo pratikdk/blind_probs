@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-// 1 -> n, no negatives
+// only works for 1 -> n, no negatives
 public class P442_FindAllDupllicates {
 
     public static List<Integer> findDuplicates(int[] nums) {

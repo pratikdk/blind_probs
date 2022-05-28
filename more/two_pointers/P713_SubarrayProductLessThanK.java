@@ -4,7 +4,7 @@ public class P713_SubarrayProductLessThanK {
         int product = 1;
         for (int i = 0, j = 0; j < nums.length; j++) {
             product *= nums[j];
-            while (i <= j && product >= k) {
+            while (i <= j && product >= k) { // runs when & until subarray is invalidate(i.e product >= k), dp like problem (longest)
                 product /= nums[i];
                 i++;
             }
@@ -23,3 +23,7 @@ public class P713_SubarrayProductLessThanK {
         }
     }
 }
+
+// Each step introduces x new subarrays, where x is the size of the current window (j + 1 - i);
+// example:
+// for window (5, 2), when 6 is introduced, it add 3 new subarray: (5, (2, (6)))

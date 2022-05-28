@@ -14,6 +14,7 @@ public class P242_ValidAnagram {
         }
         return counter > 0 ? false : true;
     }
+
     public static void main(String[] args) {
         String[][] probs = {
             {"anagram", "nagaram"},
@@ -24,8 +25,28 @@ public class P242_ValidAnagram {
             {"ab", "a"},
             {"a", "ab"}
         };
+
         for (String[] prob: probs) {
             System.out.println(isAnagram(prob[0], prob[1]));
+            // System.out.println(isAnagram2(prob[0], prob[1]));
         }
     }
+
+    // public static boolean isAnagram2(String s, String t) {
+    //     int[] map = new int[128];
+    //     for (char c: t.toCharArray()) {
+    //         map[c] += 1;
+    //     }
+    //     int counter = t.length();
+    //     int end = 0;
+
+    //     while (end < s.length()) {
+    //         if (map[s.charAt(end++)]-- > 0) counter--;
+    //         else {
+    //             return false;
+    //         } 
+    //     }
+
+    //     return counter == 0;
+    // }
 }

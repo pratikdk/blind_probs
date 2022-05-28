@@ -1,18 +1,18 @@
 public class P42_TrapRainWater {
 
-    public static int trap(int[] height) {
-        int n = height.length;
+    public static int trap(int[] bars) {
+        int n = bars.length;
         int left = 0, right = n-1;
         int res = 0;
         int maxLeft = 0, maxRight = 0;
-        while (left <= right) {
-            if (height[left] <= height[right]) {
-                if (height[left] >= maxLeft) maxLeft = height[left];
-                else res += maxLeft - height[left];
+        while (left <= right) { // < ?
+            if (bars[left] <= bars[right]) { // choose smaller bar
+                if (bars[left] >= maxLeft) maxLeft = bars[left]; // look at smaller side; consider local max
+                else res += maxLeft - bars[left];
                 left++; 
             } else {
-                if (height[right] >= maxRight) maxRight = height[right];
-                else res += maxRight - height[right];
+                if (bars[right] >= maxRight) maxRight = bars[right];
+                else res += maxRight - bars[right];
                 right--;
             }
         }

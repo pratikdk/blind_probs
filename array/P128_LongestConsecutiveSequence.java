@@ -9,7 +9,7 @@ public class P128_LongestConsecutiveSequence {
         int max = 0;
         int curr = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i-1]) {
+            if (nums[i] != nums[i-1]) { // don't break, when elem at i == i-1
                 if (nums[i] == nums[i-1]+1) {
                     curr += 1;
                 } else {
@@ -18,7 +18,7 @@ public class P128_LongestConsecutiveSequence {
                 }
             }
         }
-        return Math.max(max, curr); // also consider curr for last index
+        return Math.max(max, curr); // also considers curr for last index
     }
 
     public static int longestConsecutive_sol2(int[] nums) {
@@ -47,7 +47,7 @@ public class P128_LongestConsecutiveSequence {
     }
     public static void main(String[] args) {
         int[][] probs = {
-            {100,4,200,1,3,2},
+            {100,4,200,1,3,8},
             {0,3,7,2,5,8,4,6,0,1}
         };
         for (int[] nums: probs) {

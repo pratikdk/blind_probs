@@ -32,6 +32,31 @@ public class P76_MinimumWindowSubstring {
         };
         for (String[] prob: probs) {
             System.out.println(minWindow(prob[0], prob[1]));
+            // System.out.println(minWindowSS(prob[0], prob[1]));
         }
     }
+
+    // public static String minWindowSS(String s, String t) {
+    //     int[] map = new int[128];
+    //     for (char c: t.toCharArray()) {
+    //         map[c] += 1;
+    //     }
+    //     int counter = t.length();
+
+    //     int start = 0, end = 0;
+    //     int lo = 0, windowSize = Integer.MAX_VALUE;
+
+    //     while (end < s.length()) {
+    //         if (map[s.charAt(end++)]-- > 0) counter--;
+    //         while (counter == 0) {
+    //             if (windowSize > end-start) {
+    //                 lo = start;
+    //                 windowSize = end-start;
+    //             }
+    //             if (map[s.charAt(start++)]++ == 0) counter++;
+    //         }
+    //     }
+
+    //     return (windowSize == Integer.MAX_VALUE) ? "" : s.substring(lo, lo+windowSize);
+    // }
 }

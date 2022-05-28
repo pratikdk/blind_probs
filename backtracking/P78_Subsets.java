@@ -16,9 +16,9 @@ public class P78_Subsets {
 
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int start) {
         list.add(new ArrayList<>(tempList));
-        for (int i = start; i < nums.length; i++) {
+        for (int i = start; i < nums.length; i++) { 
             tempList.add(nums[i]);
-            backtrack(list, tempList, nums, i+1);
+            backtrack(list, tempList, nums, i+1); // since no repetition for same index i // similar bounds as combsum2
             tempList.remove(tempList.size()-1);
         }
     }

@@ -7,7 +7,7 @@ public class P268_MissingNumber {
         for (int num: nums) {
             actualSum += num;
         }
-        return gaussSum-actualSum;
+        return gaussSum-actualSum; // its assumed that gauss sum will be higher(1->n)
     }
     
     public static void main(String[] args) {

@@ -12,7 +12,7 @@ public class P70_ClimbingStairs {
         int oneStepBefore = 2; // ways to climb 2 stairs // i-1 
         int twoStepsBefore = 1; // ways to climb 1 stair // i-2
         int all_ways = 0;
-        for (int i = 2; i < n; i++) {
+        for (int i = 3; i <= n; i++) {
             all_ways = oneStepBefore + twoStepsBefore;
             twoStepsBefore = oneStepBefore;
             oneStepBefore = all_ways;

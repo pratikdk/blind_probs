@@ -25,7 +25,8 @@ public class P75_SortColors {
         int[][] probs = {
             {2,0,2,1,1,0},
             {2,0,1},
-            {2, 1}
+            {2, 1},
+            {1, 0, 2, 1, 0}
         };
         for (int[] prob: probs) {
             sortColors(prob);

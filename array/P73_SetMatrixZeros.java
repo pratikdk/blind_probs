@@ -7,7 +7,7 @@ public class P73_SetMatrixZeros {
         int cols = matrix[0].length;
         int col0 = 1; // first column
         for (int i = 0; i < rows; i++) {
-            if (matrix[i][0] == 0) {
+            if (matrix[i][0] == 0) { // first look at 0th column value for row i, if zero store it. Now (i, 0) is safe for overridding
                 col0 = 0;
             }
             for (int j = 1; j < cols; j++) {

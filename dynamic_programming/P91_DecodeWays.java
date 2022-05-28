@@ -28,6 +28,18 @@ public class P91_DecodeWays {
         dp[n] = 1;
         return numDecodings_recur2(s, 0, dp);
     }
+    
+    // sol with correct condition
+    // public static int numDecodings_recur2(String s, int i, int[] dp) {
+    //     if (dp[i] > -1) return dp[i]; // if (i == s.length()) return dp[i];
+    //     if (s.charAt(i) == '0') return dp[i] = 0;
+    //     dp[i] = numDecodings_recur2(s, i+1, dp);
+    //     if (i < s.length()-1 && ((s.charAt(i) == '1' || s.charAt(i) == '2') && s.charAt(i+1) < '7')) { // correction
+    //         dp[i] += numDecodings_recur2(s, i+2, dp);
+    //     }
+    //     return dp[i];
+    // }
+
     public static int numDecodings_recur2(String s, int i, int[] dp) {
         int n = s.length();
         if (dp[i] > -1) return dp[i];
@@ -39,7 +51,7 @@ public class P91_DecodeWays {
         return dp[i];
     }
 
-    // Iterative, dp
+    // Iterative, dp // reverse scan
     public static int numDecodings_iter(String s) {
         int n = s.length();
         int[] dp = new int[n+1];
@@ -47,7 +59,7 @@ public class P91_DecodeWays {
         for (int i = n-1; i >= 0; i--) {
             if (s.charAt(i) != '0') {
                 dp[i] = dp[i+1];
-                if (i < n-1 && (s.charAt(i) == '1' || (s.charAt(i) == '2' && s.charAt(i+1) < '7'))) {
+                if (i < n-1 && (s.charAt(i) == '1' || s.charAt(i) == '2' && s.charAt(i+1) < '7')) {
                     dp[i] += dp[i+2];
                 }
             }
@@ -75,11 +87,12 @@ public class P91_DecodeWays {
             "12",
             "226",
             "0",
-            "06",
-            "2611055971756562"
+            "106",
+            "2611055971756562",
+            "26105"
         };
         for (String s: probs) {
-            System.out.println(numDecodings_iter2(s));
+            System.out.println(numDecodings_recur(s));
         }
     }
 }

@@ -11,6 +11,16 @@ public class P198_HouseRobber {
         return dp[nums.length]; // final element
     }
 
+    public static int rob2(int[] nums) {
+        int[] dp = new int[nums.length+1];
+        dp[0] = 0;
+        dp[1] = nums[0];
+        for (int i = 2; i < dp.length; i++) {  // nums.length+1 == dp.length
+            dp[i] = Math.max(dp[i-1], dp[i-2]+nums[i-1]); // dp[i] = dp[i-1] or (d[i-2]+curr)
+        }
+        return dp[nums.length];
+    }
+
     public static void main(String[] args) {
         int[][] probs = {
             {1,2,3,1},
@@ -19,7 +29,7 @@ public class P198_HouseRobber {
         };
 
         for (int[] prob: probs) {
-            System.out.println(rob(prob));
+            System.out.println(rob2(prob));
         }
     }
 }

@@ -1,5 +1,6 @@
 public class P81_SearchRotatedSortedArray2Duplicates {
 
+    ////// * See problem 33 * //////
     public static boolean search(int[] nums, int target) {
         int left = 0, right = nums.length-1;
         int mid = 0;
@@ -8,6 +9,7 @@ public class P81_SearchRotatedSortedArray2Duplicates {
             if (nums[mid] == target) {
                 return true;
             }
+            // helps forward loop to compelete and return false; [2, 2] target 1
             if (nums[left] == nums[mid] && nums[mid] == nums[right]) { // edge case, both halfs non increasing
                 left++;
                 right--;
@@ -36,6 +38,7 @@ public class P81_SearchRotatedSortedArray2Duplicates {
             {{3,4,5,1,2}, {4}},
             {{4,5,6,7,0,1,2}, {6}},
             {{11,13,15,17}, {15}}
+            // 4 1 2 4 4 4 4
         };
         for (int[][] prob: probs) {
             System.out.println(search(prob[0], prob[1][0]));

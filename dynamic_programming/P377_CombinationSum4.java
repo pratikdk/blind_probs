@@ -1,15 +1,16 @@
 import java.util.Arrays;
 
-/********* It is Permutation Sum, not Combination Sum *********/
+/********* It is Permutation Sum, not Combination Sum *********/ 
 /**************************************************************/
+// (with duplicates)
 
 public class P377_CombinationSum4 {
-
+    // always start iteration from 0, and on each i reduce target(by i) and recurse
     // recursive // top down
     public static int combinationSum4_sol1(int[] nums, int target) {
         if (target == 0) return 1;
         int res = 0;
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0; i < nums.length; ++i) { // start loop from 0 everytime // hence allow duplicates
             if (nums[i] <= target) {
                 res += combinationSum4_sol1(nums, target-nums[i]);
             }
@@ -45,7 +46,7 @@ public class P377_CombinationSum4 {
         for (int i = 1; i <= target; i++) { // i remaining to reach target
             for (int j = 0; j < nums.length; j++) { // target is i away, try every num in nums;
                 if (nums[j] <= i) {
-                    dp[i] += dp[i - nums[j]];
+                    dp[i] += dp[i - nums[j]]; // relay 1 from dp
                 }
             }
         }

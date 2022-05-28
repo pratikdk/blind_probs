@@ -19,9 +19,9 @@ public class P40_CombinationSum2 {
         else if (target == 0) list.add(new ArrayList<>(tempList));
         else {
             for (int i = start; i < nums.length; i++) {
-                if (i > start && nums[i] == nums[i-1]) continue;
+                if (i > start && nums[i] == nums[i-1]) continue; // when trying an element ahead(>i) in current loop 
                 tempList.add(nums[i]);
-                backtrack(list, tempList, nums, target-nums[i], i+1);
+                backtrack(list, tempList, nums, target-nums[i], i+1); // since no repetition for same index i
                 tempList.remove(tempList.size()-1);
             }
         }

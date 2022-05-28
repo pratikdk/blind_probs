@@ -17,7 +17,7 @@ public class P90_Subsets2 {
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int start) {
         list.add(new ArrayList<>(tempList));
         for (int i = start; i < nums.length; i++) {
-            if (i > start && nums[i] == nums[i-1]) { // duplicate elements are ignored when looping. > start
+            if (i > start && nums[i] == nums[i-1]) { // duplicate elements are ignored when looping(iterating). > start
                 continue;
             }
             tempList.add(nums[i]);

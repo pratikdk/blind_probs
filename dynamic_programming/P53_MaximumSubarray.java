@@ -1,10 +1,11 @@
 public class P53_MaximumSubarray {
 
+    // true dp
     public static int maxSubArray_sol1(int[] nums) {
         int max = nums[0];
         int currSum = max;
         for (int i = 1; i < nums.length; i++) {
-            if (currSum <= 0) {
+            if (currSum <= 0) { // consider [-5, 4], its better off to ignore -5 (negative value here always reduces curSum)
                 currSum = 0;
             }
             currSum += nums[i];
@@ -65,4 +66,37 @@ public class P53_MaximumSubarray {
             System.out.println(maxSubArray_sol2(prob));
         }
     }
+
+    // ============================
+    public static int maxSubarraySol(int[] nums) {
+        int curr = nums[0];
+        int max = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            if (curr <= 0) {
+                curr = 0;
+            }
+            curr += nums[i];
+            max = Math.max(max, curr);
+        }
+
+        return max;
+    }
+
+    public static int maxSubarraySol2(int[] nums) {
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int max = dp[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            if (dp[i-1] > 0) {
+                dp[i] = dp[i-1];
+            }
+            dp[i] += nums[i];
+            max = Math.max(max, dp[i]);
+        }
+
+        return max;
+    }
 }
+

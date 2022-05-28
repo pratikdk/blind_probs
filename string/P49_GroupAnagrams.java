@@ -14,11 +14,11 @@ public class P49_GroupAnagrams {
             char[] c = s.toCharArray();
             Arrays.sort(c);
             String keyString = String.valueOf(c);
-            if (!map.containsKey(keyString)) {map.put(keyString, new ArrayList<>());} // putIfAbsent()
-            map.get(keyString).add(s);
+            if (!map.containsKey(keyString)) {map.put(keyString, new ArrayList<>());} // putIfAbsent() 
+            map.get(keyString).add(s); //  put(keyString, getOrDefault(keystring, default).add())
         }
 
-        return new ArrayList<>(map.values());
+        return new ArrayList<>(map.values()); // return a copy
     }
     public static void main(String[] args) {
         String[][] probs = {

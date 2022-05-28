@@ -19,8 +19,8 @@ public class P47_Permutations2 {
         if (tempList.size() == nums.length) {
             list.add(new ArrayList<>(tempList));
         } else {
-            for (int i = 0; i < nums.length; i++) {
-                if (used[i] || i > 0 && nums[i] == nums[i-1] && !used[i-1]) {
+            for (int i = 0; i < nums.length; i++) {             // i-1 shoud be used; Eg: 1, 1, 2 (i-1 prev added to same set); only diff
+                if (used[i] || i > 0 && nums[i] == nums[i-1] && !used[i-1]) { // 1 2 2, former 2 should precede later 2  
                     continue;
                 }
                 tempList.add(nums[i]);

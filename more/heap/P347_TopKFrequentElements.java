@@ -47,7 +47,7 @@ public class P347_TopKFrequentElements {
             public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
                 return o2.getValue() - o1.getValue(); // Decreasing order, max -> min
             }
-        }); // (a, b) -> b.getValue() - b.getValue()
+        }); // (a, b) -> b.getValue() - a.getValue()
 
         for (Map.Entry<Integer, Integer> entry: frequencyMap.entrySet()) {
             maxHeap.add(entry);
@@ -68,7 +68,7 @@ public class P347_TopKFrequentElements {
             {{1}, {1}}
         };
         for (int[][] prob: probs) {
-            System.out.println(Arrays.toString(topKFrequent1(prob[0], prob[1][0])));
+            //System.out.println(Arrays.toString(topKFrequent1(prob[0], prob[1][0])));
             System.out.println(Arrays.toString(topKFrequent2(prob[0], prob[1][0])));
         }
     }

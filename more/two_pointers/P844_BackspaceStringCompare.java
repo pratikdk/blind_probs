@@ -6,7 +6,7 @@ public class P844_BackspaceStringCompare {
         int countS = 0;
         int countT = 0;
         while (i >= 0 || j >= 0) {
-            while (i >= 0 && (countS > 0 || s.charAt(i) == '#')) {
+            while (i >= 0 && (countS > 0 || s.charAt(i) == '#')) { // reduce or increase count; stop at a valid char
                 if (s.charAt(i) == '#') countS++;
                 else countS--;
                 i--;
@@ -16,8 +16,8 @@ public class P844_BackspaceStringCompare {
                 else countT--;
                 j--;
             }
-            char left = (i < 0) ? '#' : s.charAt(i);
-            char right = (j < 0) ? '#' : t.charAt(j);
+            char left = (i < 0) ? '#' : s.charAt(i); // extract valid char to compare
+            char right = (j < 0) ? '#' : t.charAt(j); // valid char to comapre
             if (left != right) return false;
             i--;
             j--;

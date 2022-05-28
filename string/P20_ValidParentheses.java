@@ -3,7 +3,7 @@ import java.util.Stack;
 public class P20_ValidParentheses {
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
-        for (Character c: s.toCharArray()) {
+        for (char c: s.toCharArray()) {
             if (c == '(') {
                 stack.push(')');
             } else if (c == '{') {

@@ -5,9 +5,9 @@ public class P1143_LongestCommonSubsequence {
         for (int i = 1; i <= text1.length(); i++) {
             for (int j = 1; j <= text2.length(); j++) {
                 if (text1.charAt(i-1) == text2.charAt(j-1)) { // if char at i == j ? +1
-                    dp[i][j] = dp[i-1][j-1] + 1;
+                    dp[i][j] = dp[i-1][j-1] + 1; // any common matches previously and within
                 } else { // if not max(left, top) cells
-                    dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
+                    dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]); // relay
                 }
             }
         }
@@ -35,6 +35,7 @@ public class P1143_LongestCommonSubsequence {
         String[][] probs = {
             {"abcde", "ace"},
             {"abc", "abc"},
+            {"acb", "abc"},
             {"abc", "def"}
         };
         for (String[] prob: probs) {

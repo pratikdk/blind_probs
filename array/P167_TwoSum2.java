@@ -27,12 +27,12 @@ public class P167_TwoSum2 {
     }
 
     public static List<List<Integer>> twoSum2_sol2(int[] nums, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+
         Arrays.sort(nums);
         int l = 0, r = nums.length - 1;
-        int sum;
-        List<List<Integer>> res = new ArrayList<>();
         while (l < r) {
-            sum = nums[l] + nums[r];
+            int sum = nums[l] + nums[r];
             if (sum < target) {
                 l++;
             } else if (sum > target) {

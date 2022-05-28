@@ -1,24 +1,27 @@
 public class P33_SearchInRotatedSortedArray1Distinct {
 
+    // https://www.youtube.com/watch?v=U8XENwh8Oy8
     public static int search(int[] nums, int target) {
-        int left = 0, right = nums.length-1;
+        int l = 0, r = nums.length-1;
         int mid = 0;
-        while (left <= right) {
-            mid = (left+right)/2;
+
+        while (l <= r) {
+            mid = (l+r)/2;
             if (nums[mid] == target) {
                 return mid;
             }
-            if (nums[left] <= nums[mid]) { // first half is sorted
-                if (nums[left] <= target && target < nums[mid]) { // if within sorted bounds
-                    right = mid-1;
-                } else { // explore other half
-                    left = mid+1;
+
+            if (nums[l] <= nums[mid]) { // mid is in left half
+                if (target > nums[mid] || target < nums[l]) { // move to right half
+                    l = mid+1;
+                } else { // move to left half
+                    r = mid-1;
                 }
-            } else { // second half is sorted
-                if (nums[mid] < target && target <= nums[right]) { // if within sorted bounds
-                    left = mid+1;
+            } else { // mid is in right half
+                if (target < nums[mid] || target > nums[r]) { // if within sorted bounds
+                    r = mid-1;
                 } else { // explore other half
-                    right = mid-1;
+                    l = mid+1;
                 }
             }
         }
@@ -32,6 +35,7 @@ public class P33_SearchInRotatedSortedArray1Distinct {
             {{3,4,5,1,2}, {4}},
             {{4,5,6,7,0,1,2}, {6}},
             {{11,13,15,17}, {15}}
+            // 3, 4, 0, 1, 2
         };
         for (int[][] prob: probs) {
             System.out.println(search(prob[0], prob[1][0]));

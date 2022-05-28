@@ -43,4 +43,9 @@ public class P131_PalindromePartitioning {
             System.out.println(partition(prob));
         }
     }
+
+    // a b c 
+    // a bc
+    // ab c , wont procceed with recursion call if ab is not palindromic
+    // abc
 }

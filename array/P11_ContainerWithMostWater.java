@@ -2,8 +2,9 @@ public class P11_ContainerWithMostWater {
     public static int maxArea(int[] nums) {
         int l = 0, r = nums.length-1;
         int max = Integer.MIN_VALUE;
-        int currArea;
         while (l < r) {
+            int currArea = 0;
+            
             if (nums[l] <= nums[r]) {
                 currArea = (r-l)*nums[l];
                 l++;
