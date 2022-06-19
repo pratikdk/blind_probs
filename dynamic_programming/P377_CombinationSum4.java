@@ -46,7 +46,7 @@ public class P377_CombinationSum4 {
         for (int i = 1; i <= target; i++) { // i remaining to reach target
             for (int j = 0; j < nums.length; j++) { // target is i away, try every num in nums;
                 if (nums[j] <= i) {
-                    dp[i] += dp[i - nums[j]]; // relay 1 from dp
+                    dp[i] += dp[i - nums[j]]; // relay 1 from dp, dp[i]; number or permutation for target i
                 }
             }
         }

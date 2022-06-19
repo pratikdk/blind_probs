@@ -9,7 +9,7 @@ public class P81_SearchRotatedSortedArray2Duplicates {
             if (nums[mid] == target) {
                 return true;
             }
-            // helps forward loop to compelete and return false; [2, 2] target 1
+            // helps forward loop to compelete the while loop and return false; [2, 2] target 1
             if (nums[left] == nums[mid] && nums[mid] == nums[right]) { // edge case, both halfs non increasing
                 left++;
                 right--;

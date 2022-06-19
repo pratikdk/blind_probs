@@ -9,11 +9,11 @@ public class P442_FindAllDupllicates {
         List<Integer> res = new ArrayList<>();
 
         for (int i = 0; i < nums.length; i++) {
-            int index = Math.abs(nums[i])-1;
-            if (nums[index] < 0) {
+            int index = Math.abs(nums[i])-1; // get true index
+            if (nums[index] < 0) { // check if nums[index] already marked as negative
                 res.add(index+1);
             }
-            nums[index] = -1 * Math.abs(nums[index]);
+            nums[index] = -1 * Math.abs(nums[index]); // mark nums[index] as negative
         }
         System.out.println(">>> " + Arrays.toString(nums));
 

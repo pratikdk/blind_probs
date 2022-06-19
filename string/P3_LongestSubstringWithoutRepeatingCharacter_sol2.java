@@ -10,7 +10,7 @@ public class P3_LongestSubstringWithoutRepeatingCharacter_sol2 {
         while (end < s.length()) {
             if (map[s.charAt(end++)]++ > 0) { counter++; }
             while (counter > 0) {
-                if (map[s.charAt(start++)]-- > 1) { counter--; }
+                if (map[s.charAt(start++)]-- == 2) { counter--; }
             }
             wSize = Math.max(wSize, end-start);
         }

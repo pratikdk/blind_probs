@@ -11,11 +11,12 @@ public class P131_PalindromePartitioning {
         return list;
     }
 
+    // iteration is similar to subsets, each time considers a substring from start to i (as palindrome candidate)
     private static void backtrack(List<List<String>> list, List<String> tempList, String s, int start) {
         if (start == s.length()) {
             list.add(new ArrayList<>(tempList));
         } else {
-            for (int i = start; i < s.length(); i++) {
+            for (int i = start; i < s.length(); i++) { // start -> i (check if palindromic), add-> recurse->backtrack, add templist to list when start == s.length()
                 if (isPalindromic(s, start, i)) {
                     tempList.add(s.substring(start, i+1));
                     backtrack(list, tempList, s, i+1);

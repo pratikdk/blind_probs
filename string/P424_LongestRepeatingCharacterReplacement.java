@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 public class P424_LongestRepeatingCharacterReplacement {
     
     // this algo isn't correct, try input {aaabcd, 2}, the while loop considers aabcd as valid, 
@@ -20,15 +22,15 @@ public class P424_LongestRepeatingCharacterReplacement {
     public static int longestStringWithChrReplacement(String s, int k) {
         int[] map = new int[26];
         int maxWindowSize = 0;
-
         int l = 0, r = 0;
+        
         //maxf = 0
         while (r < s.length()) {
             map[s.charAt(r) - 'A']++;
             r++;
             // maxf = max(maxf, map[current_char])
 
-            while ((r-l - maxInArray(map)) > k) { // formula: windowSize - maxFreq <= k; or use maxf
+            while ((r-l - maxInArray(map)) > k) { // formula: currentwindowSize - maxFreq(max occuring character count) <= k; or use maxf
                 // left shift/slide
                 map[s.charAt(l) - 'A']--;
                 l++;

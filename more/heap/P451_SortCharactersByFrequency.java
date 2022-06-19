@@ -46,7 +46,7 @@ public class P451_SortCharactersByFrequency {
         StringBuilder sb = new StringBuilder();
         while (!maxHeap.isEmpty()) {
             Map.Entry<Character, Integer> entry = maxHeap.poll();
-            for (int i = 0; i < (int) entry.getValue(); i++) {
+            for (int i = 0; i < entry.getValue(); i++) {
                 sb.append(entry.getKey());
             }
         }

@@ -7,11 +7,11 @@ public class P448_FindAllMissingNumbers {
     public static List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> res = new ArrayList<Integer>();
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) { // get true index and nums[index] as negative
             nums[Math.abs(nums[i])-1] = -1 * Math.abs(nums[Math.abs(nums[i])-1]);
         }
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) { // check if any number is missin (> 0)
             if (nums[i] > 0) { // its missing
                 res.add(i+1);
             }

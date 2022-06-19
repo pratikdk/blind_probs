@@ -13,7 +13,7 @@ public class P39_CombinationSum {
         backtrack(list, new ArrayList<>(), nums, target, 0);
         return list;
     }
-
+    // try a number until exhaust, and move ahead, not allowed to choose again once exhausted
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int target, int start) {
         if (target < 0) return;
         else if (target == 0) list.add(new ArrayList<>(tempList)); // create of copy of templist before appending

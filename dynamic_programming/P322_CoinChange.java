@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class P322_CoinChange {
     // https://leetcode.com/problems/coin-change/discuss/77360/C%2B%2B-O(n*amount)-time-O(amount)-space-DP-solution
     public static int coinChange(int[] coins, int amount) {
-        int[] dp = new int[amount+1];
+        int[] dp = new int[amount+1]; // initialized with amount+1, because we are minimizing
         Arrays.fill(dp, amount+1);
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {

@@ -35,6 +35,7 @@ public class P23_MergeKSortedLists {
                 minHeap.add(node);
             }
         }
+        // minHeap.addAll(lists);
 
         LNode dNode = new LNode(); // dummy node
         LNode dHead = dNode;
@@ -87,6 +88,9 @@ public class P23_MergeKSortedLists {
             LNode resNode = mergeKLists(new ArrayList<>(Arrays.asList(constructKLinkedLists(prob))));
             printLinkedList(resNode);
         }
+
+        // int[] x = {1, 2, 3};
+        // List<Integer> l = new ArrayList(Arrays.asList(x));
 
         // int[][] l = {{}};
         // System.out.println(l.length);

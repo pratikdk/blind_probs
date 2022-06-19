@@ -2,7 +2,7 @@ public class P125_ValidPalindrome {
     public static boolean isPalindrome(String s) {
         int l = 0;
         int r = s.length()-1;
-        while (l <= r) { // skip everything but letter first at l then r, once you have letters at l and r both, compare them.
+        while (l <= r) { // skip everything until you find first valid char at l then r, once you have letters at l and r both, compare them.
             if (!Character.isLetterOrDigit(s.charAt(l))) {
                 l++;
             } else if (!Character.isLetterOrDigit(s.charAt(r))) {

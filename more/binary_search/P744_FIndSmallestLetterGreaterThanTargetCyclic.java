@@ -1,4 +1,6 @@
 public class P744_FIndSmallestLetterGreaterThanTargetCyclic {
+
+    /****** incorrect solution ******/
     public static int nextGreatestNumber2(int[] nums, int target) {
         int l = 0, r = nums.length-1;
         int mid = 0;
@@ -6,6 +8,7 @@ public class P744_FIndSmallestLetterGreaterThanTargetCyclic {
         while (l <= r) {
             // check if target is out of bounds; i.e not within left,right
             if (nums[l] < nums[r] && target > nums[r]) { // similar to p33 only this single condition; 
+                r++;
                 break;
             }
 
@@ -28,7 +31,7 @@ public class P744_FIndSmallestLetterGreaterThanTargetCyclic {
                 }
             }
         }
-        return nums[l % nums.length];
+        return nums[r % nums.length];
     }
 
     public static void main(String[] args) {

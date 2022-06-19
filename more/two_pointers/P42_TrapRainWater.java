@@ -5,7 +5,7 @@ public class P42_TrapRainWater {
         int left = 0, right = n-1;
         int res = 0;
         int maxLeft = 0, maxRight = 0;
-        while (left <= right) { // < ?
+        while (left <= right) { // <= because, ex: [5 2 1] we need calculate water at 2 as well
             if (bars[left] <= bars[right]) { // choose smaller bar
                 if (bars[left] >= maxLeft) maxLeft = bars[left]; // look at smaller side; consider local max
                 else res += maxLeft - bars[left];
@@ -17,7 +17,7 @@ public class P42_TrapRainWater {
             }
         }
         return res;
-    }
+    } // a currmax is bounded by other max, hence we compute water diff at currentmax - curr
     public static void main(String[] args) {
         int[][] probs = { 
             {0,1,0,2,1,0,1,3,2,1,2,1},

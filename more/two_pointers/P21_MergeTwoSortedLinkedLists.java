@@ -36,10 +36,10 @@ public class P21_MergeTwoSortedLinkedLists {
         return dNode.next;
     }
     
-    public static void printLinkedList(ListNode l) {
-        while (l != null) {
-            System.out.print(l.val + " ");
-            l = l.next;
+    public static void printLinkedList(ListNode node) {
+        while (node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
         }
         System.out.println();
     }

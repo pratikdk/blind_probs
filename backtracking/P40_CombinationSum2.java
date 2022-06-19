@@ -13,7 +13,7 @@ public class P40_CombinationSum2 {
         backtrack(list, new ArrayList<>(), nums, target, 0);
         return list;
     }
-
+    // if the same number was removed earlier skip it, occurance of prev(similar number) is permitted(not duplicate combinations)
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int target, int start) {
         if (target < 0) return;
         else if (target == 0) list.add(new ArrayList<>(tempList));

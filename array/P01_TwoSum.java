@@ -21,7 +21,8 @@ public class P01_TwoSum {
         int[][][] probs = {
             {{2,7,11,15}, {9}},
             {{3,2,4}, {6}},
-            {{3,3}, {6}}
+            {{3,3}, {6}},
+            {{0, 0}, {2}} // edge case
         };
         for (int[][] prob: probs) {
             System.out.println(Arrays.toString(twoSum(prob[0], prob[1][0])));
